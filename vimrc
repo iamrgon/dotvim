@@ -50,12 +50,12 @@ endif
 "" Plugins
 
 " vim-fugutive
-noremap \gs :Gstatus<cr>
-noremap \gc :Gcommit<cr>
-noremap \ga :Gwrite<cr>
-noremap \gl :Glog<cr>
-noremap \gd :Gdiff<cr>
-noremap \gb :Gblame<cr>
+noremap \gs :Gstatus<CR>
+noremap \gc :Gcommit<CR>
+noremap \ga :Gwrite<CR>
+noremap \gl :Glog<CR>
+noremap \gd :Gdiff<CR>
+noremap \gb :Gblame<CR>
 
 " nerdtree
 let NERDTreeWinPos='left'
@@ -70,7 +70,20 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+" <Ctrl-l> redraws the screen and removes any search highlighting
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+"" buffers
+" <Alt-n> goes to next buffer
+nnoremap <C-b><C-n> :bnext<CR>
+" <Alt-n> goes to previous buffer
+nnoremap <C-b><C-p> :bprevious<CR>
+" <Alt-l> lists the current buffers
+nnoremap <C-b><C-l> :ls<CR>
+
 "" pastetoggle
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+
