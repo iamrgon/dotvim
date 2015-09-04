@@ -62,6 +62,9 @@ let NERDTreeWinPos='left'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
 "" ==============
 "" Key Mappings
 "" ==============
@@ -85,4 +88,5 @@ nnoremap <C-b><C-l> :ls<CR>
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
 
