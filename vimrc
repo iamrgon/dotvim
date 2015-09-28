@@ -68,6 +68,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" syntastic filetype checkers
+let g:syntastic_go_checkers = ["golint"]
+
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
@@ -100,4 +103,8 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+"" load local config
+if filereadable(glob("./vimrc.local"))
+  source ./vimrc.local
+endif
 
