@@ -62,12 +62,23 @@ let NERDTreeWinPos='left'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
 "" ==============
 "" Key Mappings
 "" ==============
+
+" set <Leader> key
+let mapleader=" "
+
+" Disable directionals b/c why not?! vim level: 10 :)
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
