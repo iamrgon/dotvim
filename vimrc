@@ -105,7 +105,7 @@ set pastetoggle=<F2>
 set showmode
 
 "" load local config
-if filereadable(glob("./vimrc.local"))
-  source ./vimrc.local
+if filereadable(glob("~/.vimrc.local"))
+  source ~/.vimrc.local
 endif
 
