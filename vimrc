@@ -2,6 +2,7 @@
 " rgon's VIM Settings
 """"""""""""""""""""""
 execute pathogen#infect()
+call pathogen#helptags()
 
 set nocompatible                    " choose no compatibility with legacy vi
 set encoding=utf-8
@@ -10,6 +11,7 @@ syntax on
 filetype plugin indent on           " load file type plugins + indentation
 set laststatus=2
 set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
+set autowrite                       " automatically :write before running cmds
 
 "" Whitespace
 set nowrap                          " don't wrap lines
@@ -48,6 +50,22 @@ else
 endif
 
 "" Plugins
+
+" ctrlp + The Silver Searcher
+" Excluding version control directories
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/* 
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+if executable('ag')
+  " ag > grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  " ag is so fast there's no need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 
 " vim-fugutive
 noremap \gs :Gstatus<CR>
@@ -91,6 +109,12 @@ noremap <Right> <nop>
 " <Ctrl-l> redraws the screen and removes any search highlighting
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+"" window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 "" buffers
 " <Alt-n> goes to next buffer
 nnoremap <C-b><C-n> :bnext<CR>
@@ -103,6 +127,14 @@ nnoremap <C-b><C-l> :ls<CR>
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+"" spellcheck - toggle spell checking
+nnoremap <F7> :setlocal invspell spell?<CR>
+set showmode
+" Turn on spellcheck by default in git commit msgs and Markdown files
+autocmd FileType gitcommit setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal spell
+
 
 "" load local config
 if filereadable(glob("~/.vimrc.local"))
