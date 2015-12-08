@@ -38,3 +38,9 @@
 	path = bundle/ctrlp
 	url = git@github.com:kien/ctrlp.vim.git
   ignore = dirty
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git

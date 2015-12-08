@@ -19,7 +19,8 @@ set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent
 set backspace=indent,eol,start		" backspace thru everything in insert mode
 
 "" File-Based Whitespace
-autocmd filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType python setlocal tabstop=8 shiftwidth=4 softtabstop=8 noexpandtab
 
 "" Margins
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
@@ -89,6 +90,7 @@ let g:syntastic_aggregate_errors = 1
 
 " syntastic filetype checkers
 let g:syntastic_go_checkers = ["golint"]
+let g:syntastic_javascript_checkers = ["jshint"]
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
