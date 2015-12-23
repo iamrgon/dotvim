@@ -9,18 +9,27 @@ set encoding=utf-8
 set showcmd                         " display incomplete commands
 syntax on
 filetype plugin indent on           " load file type plugins + indentation
-set laststatus=2
-set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
 set autowrite                       " automatically :write before running cmds
+set laststatus=2
+
+"" Statusline
+set statusline=                               " clear on reload
+set statusline+=[%n]\                         " buffer number
+set statusline+=%f                            " filename
+set statusline+=%h%m%r%w                      " flags
+set statusline+=%=                            " switch to the right side
+set statusline+={%{strlen(&ft)?&ft:'none'}    " filetype
+set statusline+=\|                            " separator
+set statusline+=%{strlen(&fenc)?&fenc:&enc}   " encoding
+set statusline+=\|                            " separator
+set statusline+=%{&ff}}\                      " file format
+set statusline+=%-14.([%l/%L,%v]%)\           " cursor – [line/total, col]
+set statusline+=%<%p%%                        " cursor progress
 
 "" Whitespace
 set nowrap                          " don't wrap lines
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent
 set backspace=indent,eol,start		" backspace thru everything in insert mode
-
-"" File-Based Whitespace
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType python setlocal tabstop=8 shiftwidth=4 softtabstop=8 noexpandtab
 
 "" Margins
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
@@ -28,7 +37,7 @@ match OverLength /\%81v.\+/
 
 "" Searching
 set hlsearch                        " highlight matches
-set incsearch                       " start searching before pressing <ENTER> 
+set incsearch                       " start searching before pressing <ENTER>
 
 "" Appearance
 set background=dark
@@ -54,7 +63,7 @@ endif
 
 " ctrlp + The Silver Searcher
 " Excluding version control directories
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/* 
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)',
   \ 'file': '\v\.(exe|so|dll)$',
@@ -66,7 +75,6 @@ if executable('ag')
   " ag is so fast there's no need to cache
   let g:ctrlp_use_caching = 0
 endif
-
 
 " vim-fugutive
 noremap \gs :Gstatus<CR>
