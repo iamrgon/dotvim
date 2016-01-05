@@ -9,5 +9,3 @@ setlocal tabstop=4
 setlocal textwidth=79   " PEP-8 friendly
 setlocal expandtab
 setlocal autoindent
-setlocal smartindent
-
