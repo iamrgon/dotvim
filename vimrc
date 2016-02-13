@@ -85,7 +85,8 @@ noremap \gd :Gdiff<CR>
 noremap \gb :Gblame<CR>
 
 " nerdtree
-let NERDTreeWinPos='left'
+let NERDTreeWinPos = 'left'
+let NERDTreeIgnore = ['\.pyc$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
