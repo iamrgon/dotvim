@@ -59,6 +59,16 @@ else
     autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
+" Temporary session-based file mgmt
+if empty(glob($HOME.'/.vim/tmp'))
+  call mkdir($HOME.'/.vim/tmp/backup', 'p')
+  call mkdir($HOME.'/.vim/tmp/swp')
+  call mkdir($HOME.'/.vim/tmp/undo')
+endif
+set backupdir=$HOME/.vim/tmp/backup//
+set directory=$HOME/.vim/tmp/swp//
+set undodir=$HOME/.vim/tmp/undo//
+
 "" Plugins
 
 " ctrlp + The Silver Searcher
@@ -148,7 +158,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 
 "" load local config
-if filereadable(glob("~/.vimrc.local"))
-  source ~/.vimrc.local
+if filereadable(glob($HOME.'/.vimrc.local'))
+  source $HOME/.vimrc.local
 endif
 
