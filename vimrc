@@ -156,6 +156,11 @@ set showmode
 autocmd FileType gitcommit setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal spell
 
+"" vim-markdown
+" F9 toggles the TOC on
+nnoremap <F9> :Toc<CR>
+set nofoldenable  " disable folding
+
 
 "" load local config
 if filereadable(glob($HOME.'/.vimrc.local'))
