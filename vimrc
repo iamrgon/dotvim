@@ -94,6 +94,9 @@ noremap \gl :Glog<CR>
 noremap \gd :Gdiff<CR>
 noremap \gb :Gblame<CR>
 
+" vim-go
+let g:go_fmt_command = "goimports"
+
 " nerdtree
 let NERDTreeWinPos = 'left'
 let NERDTreeIgnore = ['\.pyc$']
