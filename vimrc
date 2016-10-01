@@ -121,6 +121,13 @@ let g:syntastic_loc_list_height = 5
 
 " syntastic filetype checkers
 "
+
+" jscs returns exit code when no config file is present.
+" Only use it as a checker when appropriate.
+"
+" Thanks @kennykaye --
+" link: https://github.com/scrooloose/syntastic/issues/974#issuecomment-71329545
+"
 function! JavascriptCheckers()
   if filereadable(getcwd() . '/.jscsrc')
     return ['jshint', 'jscs']
@@ -182,6 +189,16 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 nnoremap <F9> :Toc<CR>
 set nofoldenable  " disable folding
 
+"" formatting
+
+" Removes trailing spaces
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+:endfunction
+
+map <Leader>= :call TrimWhiteSpace()<CR>
+map! <Leader>= :call TrimWhiteSpace()<CR>
 
 "" load local config
 if filereadable(glob($HOME.'/.vimrc.local'))
