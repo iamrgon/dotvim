@@ -99,7 +99,15 @@ let g:go_fmt_command = "goimports"
 
 " nerdtree
 let NERDTreeWinPos = 'left'
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore = [
+  \'\.DS_Store$',
+  \'\.git$',
+  \'\.gitkeep$',
+  \'\.pyc$',
+  \'\.swo$',
+  \'\.swp$',
+\]
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
