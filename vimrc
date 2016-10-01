@@ -192,10 +192,10 @@ set nofoldenable  " disable folding
 "" formatting
 
 " Removes trailing spaces
-function TrimWhiteSpace()
+function! TrimWhiteSpace()
   %s/\s*$//
   ''
-:endfunction
+endfunction
 
 map <Leader>= :call TrimWhiteSpace()<CR>
 map! <Leader>= :call TrimWhiteSpace()<CR>
