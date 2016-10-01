@@ -122,22 +122,13 @@ let g:syntastic_loc_list_height = 5
 " syntastic filetype checkers
 "
 
-" jscs returns exit code when no config file is present.
-" Only use it as a checker when appropriate.
-"
-" Thanks @kennykaye --
-" link: https://github.com/scrooloose/syntastic/issues/974#issuecomment-71329545
-"
-function! JavascriptCheckers()
-  if filereadable(getcwd() . '/.jscsrc')
-    return ['jshint', 'jscs']
-  else
-    return ['jshint']
-  endif
-endfunction
+" jscs returns an error exit code when no config file is present.
+" Only use it as a checker when appropriate (current buffer).
+autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != ''
+  \? ['jshint', 'jscs']
+  \: ['jshint']
 
-let g:syntastic_go_checkers = ["golint"]
-let g:syntastic_javascript_checkers = JavascriptCheckers()
+let g:syntastic_go_checkers = ['golint']
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
