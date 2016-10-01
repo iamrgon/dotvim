@@ -112,15 +112,25 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 " syntastic
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
+let g:syntastic_loc_list_height = 5
 
 " syntastic filetype checkers
+"
+function! JavascriptCheckers()
+  if filereadable(getcwd() . '/.jscsrc')
+    return ['jshint', 'jscs']
+  else
+    return ['jshint']
+  endif
+endfunction
+
 let g:syntastic_go_checkers = ["golint"]
-let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_javascript_checkers = JavascriptCheckers()
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
