@@ -71,6 +71,11 @@ set undodir=$HOME/.vim/tmp/undo//
 
 "" Plugins
 
+" vim-session
+
+" Disable automatic loading
+let g:session_autoload = 'no'
+
 " ctrlp + The Silver Searcher
 " Excluding version control directories
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
