@@ -188,8 +188,7 @@ function! TrimWhiteSpace()
   ''
 endfunction
 
-map <Leader>= :call TrimWhiteSpace()<CR>
-map! <Leader>= :call TrimWhiteSpace()<CR>
+nnoremap <Leader>= :call TrimWhiteSpace()<CR>
 
 "" load local config
 if filereadable(glob($HOME.'/.vimrc.local'))
