@@ -161,11 +161,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 "" buffers
-" <Alt-n> goes to next buffer
+" <C-b><C-n> goes to next buffer
 nnoremap <C-b><C-n> :bnext<CR>
-" <Alt-n> goes to previous buffer
+" <C-b><C-p> goes to previous buffer
 nnoremap <C-b><C-p> :bprevious<CR>
-" <Alt-l> lists the current buffers
+" <C-b><C-l> lists the current buffers
 nnoremap <C-b><C-l> :ls<CR>
 
 "" pastetoggle
