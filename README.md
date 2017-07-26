@@ -3,7 +3,7 @@ rgon's .vim files
 
 Installation:
 
-    git clone git://github.com/iamrgon/dotvim.git ~/.vim
+    git clone git@github.com:iamrgon/dotvim.git ~/.vim
 
 Create symlinks:
 
