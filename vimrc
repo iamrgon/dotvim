@@ -75,6 +75,7 @@ set undodir=$HOME/.vim/tmp/undo//
 
 " Disable automatic loading
 let g:session_autoload = 'no'
+let g:session_autosave = 'no'
 
 " ctrlp + The Silver Searcher
 " Excluding version control directories
