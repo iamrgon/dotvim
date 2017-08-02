@@ -62,3 +62,6 @@
 [submodule "bundle/vim-session"]
 	path = bundle/vim-session
 	url = git@github.com:xolox/vim-session.git
+[submodule "bundle/vim-flake8"]
+	path = bundle/vim-flake8
+	url = git@github.com:nvie/vim-flake8.git
