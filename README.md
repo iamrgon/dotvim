@@ -18,4 +18,7 @@ To upgrade bundled plugins:
 
     git submodule foreach git pull origin master
 
+Install new plugin:
+
+    git submodule add <git repo url> <path to bundle dir>/<plugin name>
 
