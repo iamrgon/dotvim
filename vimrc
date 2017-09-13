@@ -186,6 +186,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 nnoremap <F9> :Toc<CR>
 set nofoldenable  " disable folding
 
+"" vim-jsx
+" Load JSX highlighting on .js files
+let g:jsx_ext_required = 0
+
 "" formatting
 
 " Removes trailing spaces
