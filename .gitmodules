@@ -65,3 +65,6 @@
 	path = bundle/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
   ignore = dirty
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = git@github.com:hashivim/vim-terraform.git
