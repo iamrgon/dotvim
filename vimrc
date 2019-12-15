@@ -190,6 +190,11 @@ set nofoldenable  " disable folding
 " Load JSX highlighting on .js files
 let g:jsx_ext_required = 0
 
+"" vim-terraform
+" Automatically format on save.
+let g:terraform_fmt_on_save = 1
+let g:terraform_align = 1
+
 "" formatting
 
 " Removes trailing spaces
