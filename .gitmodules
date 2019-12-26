@@ -65,3 +65,6 @@
 [submodule "bundle/vim-terraform"]
 	path = bundle/vim-terraform
 	url = git@github.com:hashivim/vim-terraform.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = git@github.com:dense-analysis/ale.git
