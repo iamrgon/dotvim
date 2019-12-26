@@ -125,15 +125,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
 
-" syntastic filetype checkers
-"
-
-" jscs returns an error exit code when no config file is present.
-" Only use it as a checker when appropriate (current buffer).
-autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != ''
-  \? ['jshint', 'jscs']
-  \: ['jshint']
-
+"" syntastic filetype checkers
 let g:syntastic_go_checkers = ['golint']
 
 "" ale linters
