@@ -136,6 +136,15 @@ autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;')
 
 let g:syntastic_go_checkers = ['golint']
 
+"" ale linters
+" Support the "standard" lint style for Javascript.
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
