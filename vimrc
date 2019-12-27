@@ -128,12 +128,7 @@ let g:syntastic_loc_list_height = 5
 "" syntastic filetype checkers
 let g:syntastic_go_checkers = ['golint']
 
-"" ale linters
-" Support the "standard" lint style for Javascript.
-let g:ale_linters = {
-\   'javascript': ['standard'],
-\}
-let g:ale_fixers = {'javascript': ['standard']}
+"" ALE
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 
