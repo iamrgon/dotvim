@@ -138,8 +138,12 @@ let g:syntastic_go_checkers = ['golint']
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 
-" tagbar
-nmap <F8> :TagbarToggle<CR>
+"" tagbar
+let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
+" show + jump to Tagbar window, plus close when jumping to identifier
+nnoremap <F8> :TagbarOpenAutoClose<CR>
+" toggle the Tagbar window
+nnoremap <F9> :TagbarToggle<CR>
 
 "" ==============
 "" Key Mappings
@@ -185,7 +189,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 "" vim-markdown
 " F9 toggles the TOC on
-nnoremap <F9> :Toc<CR>
+nnoremap <F10> :Toc<CR>
 set nofoldenable  " disable folding
 
 "" vim-terraform
