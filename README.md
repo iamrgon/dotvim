@@ -16,7 +16,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
 
 To upgrade bundled plugins:
 
-    git submodule foreach git pull origin master
+    git submodule foreach git pull origin main
 
 Install new plugin:
 
