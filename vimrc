@@ -90,6 +90,12 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
   " ag is so fast there's no need to cache
   let g:ctrlp_use_caching = 0
+
+  " Enable Ack.vim w/ The Silver Searcher
+  let g:ackprg = 'ag --vimgrep --smart-case'
+
+  " Add alias to rewrite "Ag" to "Ack" to aid in the transition effort.
+  cnoreabbrev Ag Ack
 endif
 
 " vim-fugutive
